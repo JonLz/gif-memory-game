@@ -13,6 +13,7 @@
 		61A805F01C611E790096473C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A805EE1C611E790096473C /* Main.storyboard */; };
 		61A805F21C611E790096473C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A805F11C611E790096473C /* Assets.xcassets */; };
 		61A805F51C611E790096473C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A805F31C611E790096473C /* LaunchScreen.storyboard */; };
+		61A805FF1C612FE30096473C /* 8-BIT WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 61A805FE1C612FB50096473C /* 8-BIT WONDER.TTF */; };
 		83D47AA6F20DE0FA0CC58217 /* libPods-gif-memory-game.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA6BB4AA7D639EF40A49906 /* libPods-gif-memory-game.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		61A805F11C611E790096473C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61A805F41C611E790096473C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61A805F61C611E790096473C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61A805FE1C612FB50096473C /* 8-BIT WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8-BIT WONDER.TTF"; path = "Assets/8-BIT WONDER.TTF"; sourceTree = "<group>"; };
 		62F034761DB50E6DDF8589C1 /* Pods-gif-memory-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.release.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.release.xcconfig"; sourceTree = "<group>"; };
 		C6E566FB300982687BC895F1 /* Pods-gif-memory-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA6BB4AA7D639EF40A49906 /* libPods-gif-memory-game.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gif-memory-game.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,10 +81,10 @@
 				61A805EB1C611E790096473C /* ViewController.h */,
 				61A805EC1C611E790096473C /* ViewController.m */,
 				61A805EE1C611E790096473C /* Main.storyboard */,
-				61A805F11C611E790096473C /* Assets.xcassets */,
 				61A805F31C611E790096473C /* LaunchScreen.storyboard */,
 				61A805F61C611E790096473C /* Info.plist */,
 				61A805E51C611E790096473C /* Supporting Files */,
+				61A805FD1C612F730096473C /* Assets */,
 			);
 			path = "gif-memory-game";
 			sourceTree = "<group>";
@@ -93,6 +95,15 @@
 				61A805E61C611E790096473C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		61A805FD1C612F730096473C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				61A805FE1C612FB50096473C /* 8-BIT WONDER.TTF */,
+				61A805F11C611E790096473C /* Assets.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		948269794AD65E21DB4FDE66 /* Frameworks */ = {
@@ -163,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A805FF1C612FE30096473C /* 8-BIT WONDER.TTF in Resources */,
 				61A805F51C611E790096473C /* LaunchScreen.storyboard in Resources */,
 				61A805F21C611E790096473C /* Assets.xcassets in Resources */,
 				61A805F01C611E790096473C /* Main.storyboard in Resources */,
