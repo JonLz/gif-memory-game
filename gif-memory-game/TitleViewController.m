@@ -8,6 +8,7 @@
 
 #import "TitleViewController.h"
 #import <Masonry/Masonry.h>
+#import "GiphyNetworkingModel.h"
 
 @interface TitleViewController ()
 @property (nonatomic, strong) UIImageView *backgroundImageView;
@@ -27,6 +28,13 @@
     [self setupViewConstraints];
     [self setupViewContent];
     [self setupUserInteractions];
+    
+    GiphyNetworkingModel *GiphyAPI = [GiphyNetworkingModel sharedInstance];
+    [GiphyAPI retrieveGifUrlsWithSuccess:^(NSArray *urls) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)setupViews

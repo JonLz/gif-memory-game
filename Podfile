@@ -8,6 +8,7 @@ target 'gif-memory-game' do
 pod 'AFNetworking'
 pod 'Masonry'
 pod 'SDWebImage'
+pod 'OHHTTPStubs'
 
 end
 
