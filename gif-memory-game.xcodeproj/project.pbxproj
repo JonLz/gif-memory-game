@@ -16,6 +16,11 @@
 		61A805FF1C612FE30096473C /* 8-BIT WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 61A805FE1C612FB50096473C /* 8-BIT WONDER.TTF */; };
 		61A806021C625D5A0096473C /* GiphyNetworkingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A806011C625D5A0096473C /* GiphyNetworkingModel.m */; };
 		61A806071C62652B0096473C /* GiphyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 61A806061C62652B0096473C /* GiphyResponse.json */; };
+		61F8DB811C62BC3C0096BAD1 /* MemoryTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB801C62BC3C0096BAD1 /* MemoryTile.m */; };
+		61F8DB841C62BC430096BAD1 /* MemoryGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB831C62BC430096BAD1 /* MemoryGame.m */; };
+		61F8DB871C630FB20096BAD1 /* MemoryTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB861C630FB20096BAD1 /* MemoryTileView.m */; };
+		61F8DB8A1C630FDE0096BAD1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB891C630FDE0096BAD1 /* GameViewController.m */; };
+		61F8DB8D1C63EC650096BAD1 /* NSMutableArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */; };
 		83D47AA6F20DE0FA0CC58217 /* libPods-gif-memory-game.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA6BB4AA7D639EF40A49906 /* libPods-gif-memory-game.a */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +39,16 @@
 		61A806001C625D5A0096473C /* GiphyNetworkingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiphyNetworkingModel.h; sourceTree = "<group>"; };
 		61A806011C625D5A0096473C /* GiphyNetworkingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiphyNetworkingModel.m; sourceTree = "<group>"; };
 		61A806061C62652B0096473C /* GiphyResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GiphyResponse.json; sourceTree = "<group>"; };
+		61F8DB7F1C62BC3C0096BAD1 /* MemoryTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryTile.h; sourceTree = "<group>"; };
+		61F8DB801C62BC3C0096BAD1 /* MemoryTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryTile.m; sourceTree = "<group>"; };
+		61F8DB821C62BC430096BAD1 /* MemoryGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryGame.h; sourceTree = "<group>"; };
+		61F8DB831C62BC430096BAD1 /* MemoryGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryGame.m; sourceTree = "<group>"; };
+		61F8DB851C630FB20096BAD1 /* MemoryTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryTileView.h; sourceTree = "<group>"; };
+		61F8DB861C630FB20096BAD1 /* MemoryTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryTileView.m; sourceTree = "<group>"; };
+		61F8DB881C630FDE0096BAD1 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		61F8DB891C630FDE0096BAD1 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		61F8DB8B1C63EC650096BAD1 /* NSMutableArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffle.h"; sourceTree = "<group>"; };
+		61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffle.m"; sourceTree = "<group>"; };
 		62F034761DB50E6DDF8589C1 /* Pods-gif-memory-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.release.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.release.xcconfig"; sourceTree = "<group>"; };
 		C6E566FB300982687BC895F1 /* Pods-gif-memory-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA6BB4AA7D639EF40A49906 /* libPods-gif-memory-game.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gif-memory-game.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +100,16 @@
 				61A805E91C611E790096473C /* AppDelegate.m */,
 				61A806001C625D5A0096473C /* GiphyNetworkingModel.h */,
 				61A806011C625D5A0096473C /* GiphyNetworkingModel.m */,
+				61F8DB7F1C62BC3C0096BAD1 /* MemoryTile.h */,
+				61F8DB801C62BC3C0096BAD1 /* MemoryTile.m */,
+				61F8DB821C62BC430096BAD1 /* MemoryGame.h */,
+				61F8DB831C62BC430096BAD1 /* MemoryGame.m */,
+				61F8DB8B1C63EC650096BAD1 /* NSMutableArray+Shuffle.h */,
+				61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */,
+				61F8DB881C630FDE0096BAD1 /* GameViewController.h */,
+				61F8DB891C630FDE0096BAD1 /* GameViewController.m */,
+				61F8DB851C630FB20096BAD1 /* MemoryTileView.h */,
+				61F8DB861C630FB20096BAD1 /* MemoryTileView.m */,
 				61A805EB1C611E790096473C /* TitleViewController.h */,
 				61A805EC1C611E790096473C /* TitleViewController.m */,
 				61A805EE1C611E790096473C /* Main.storyboard */,
@@ -245,10 +270,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F8DB8A1C630FDE0096BAD1 /* GameViewController.m in Sources */,
 				61A805ED1C611E790096473C /* TitleViewController.m in Sources */,
 				61A805EA1C611E790096473C /* AppDelegate.m in Sources */,
+				61F8DB841C62BC430096BAD1 /* MemoryGame.m in Sources */,
+				61F8DB811C62BC3C0096BAD1 /* MemoryTile.m in Sources */,
+				61F8DB8D1C63EC650096BAD1 /* NSMutableArray+Shuffle.m in Sources */,
 				61A805E71C611E790096473C /* main.m in Sources */,
 				61A806021C625D5A0096473C /* GiphyNetworkingModel.m in Sources */,
+				61F8DB871C630FB20096BAD1 /* MemoryTileView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

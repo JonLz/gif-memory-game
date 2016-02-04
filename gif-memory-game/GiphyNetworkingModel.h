@@ -11,6 +11,6 @@
 
 @interface GiphyNetworkingModel : NSObject
 + (instancetype)sharedInstance;
-- (void)retrieveGifUrlsWithSuccess:(void (^)(NSArray *urls))success failure:(void (^)(NSError *error))failure;
+- (void)fetchGiphyImageData:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *error))failure;
 
 @end

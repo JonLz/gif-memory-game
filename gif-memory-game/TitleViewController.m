@@ -8,7 +8,8 @@
 
 #import "TitleViewController.h"
 #import <Masonry/Masonry.h>
-#import "GiphyNetworkingModel.h"
+#import "MemoryGame.h"
+#import "MemoryTile.h"
 
 @interface TitleViewController ()
 @property (nonatomic, strong) UIImageView *backgroundImageView;
@@ -29,12 +30,11 @@
     [self setupViewContent];
     [self setupUserInteractions];
     
-    GiphyNetworkingModel *GiphyAPI = [GiphyNetworkingModel sharedInstance];
-    [GiphyAPI retrieveGifUrlsWithSuccess:^(NSArray *urls) {
-        
-    } failure:^(NSError *error) {
+    MemoryGame *game = [MemoryGame sharedInstance];
+    [game newGameWithCompletion:^(BOOL success) {
         
     }];
+   
 }
 
 - (void)setupViews

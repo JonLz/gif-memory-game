@@ -31,23 +31,14 @@
     return sharedInstance;
 }
 
--(void)retrieveGifUrlsWithSuccess:(void (^)(NSArray *urls))success failure:(void (^)(NSError *))failure
+-(void)fetchGiphyImageData:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *))failure
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    NSString *url = @"http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=24";
+    NSString *url = @"http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=12";
     
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSArray *results = responseObject[@"data"];
-        NSMutableArray *urls = [[NSMutableArray alloc] init];
-        
-        for (NSDictionary *result in results) {
-            NSString *fixedHeightImageURL = result[@"images"][@"fixed_height"][@"url"];
-            [urls addObject:[NSURL URLWithString:fixedHeightImageURL]];
-        }
-        
-        success(urls);
+        success(responseObject[@"data"]);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(error);
