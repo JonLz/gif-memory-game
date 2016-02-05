@@ -53,7 +53,7 @@
 
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
+        return [request.URL.host isEqualToString:@"api.giphy.com"];
     } withStubResponse:^OHHTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) {
         return [OHHTTPStubsResponse responseWithFileAtPath:[bundle pathForResource:@"GiphyResponse" ofType:@"json"] statusCode:200 headers:@{@"Content-Type":@"application/json"}];
     }];

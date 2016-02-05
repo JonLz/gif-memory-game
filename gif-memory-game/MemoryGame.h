@@ -10,9 +10,10 @@
 #import "MemoryTile.h"
 
 @interface MemoryGame : NSObject
+
+@property (nonatomic, strong, readonly) NSMutableArray *tiles;
+
 - (void)newGameWithCompletion:(void (^)(BOOL success))completion;
-
 - (void)handleTurn:(MemoryTile *)tile;
-
 + (instancetype)sharedInstance;
 @end

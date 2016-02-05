@@ -21,6 +21,7 @@
 		61F8DB871C630FB20096BAD1 /* MemoryTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB861C630FB20096BAD1 /* MemoryTileView.m */; };
 		61F8DB8A1C630FDE0096BAD1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB891C630FDE0096BAD1 /* GameViewController.m */; };
 		61F8DB8D1C63EC650096BAD1 /* NSMutableArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */; };
+		61F8DB901C6511470096BAD1 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8DB8F1C6511470096BAD1 /* BackgroundView.m */; };
 		83D47AA6F20DE0FA0CC58217 /* libPods-gif-memory-game.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA6BB4AA7D639EF40A49906 /* libPods-gif-memory-game.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		61F8DB891C630FDE0096BAD1 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		61F8DB8B1C63EC650096BAD1 /* NSMutableArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffle.h"; sourceTree = "<group>"; };
 		61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffle.m"; sourceTree = "<group>"; };
+		61F8DB8E1C6511470096BAD1 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		61F8DB8F1C6511470096BAD1 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
 		62F034761DB50E6DDF8589C1 /* Pods-gif-memory-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.release.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.release.xcconfig"; sourceTree = "<group>"; };
 		C6E566FB300982687BC895F1 /* Pods-gif-memory-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA6BB4AA7D639EF40A49906 /* libPods-gif-memory-game.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gif-memory-game.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +113,8 @@
 				61F8DB891C630FDE0096BAD1 /* GameViewController.m */,
 				61F8DB851C630FB20096BAD1 /* MemoryTileView.h */,
 				61F8DB861C630FB20096BAD1 /* MemoryTileView.m */,
+				61F8DB8E1C6511470096BAD1 /* BackgroundView.h */,
+				61F8DB8F1C6511470096BAD1 /* BackgroundView.m */,
 				61A805EB1C611E790096473C /* TitleViewController.h */,
 				61A805EC1C611E790096473C /* TitleViewController.m */,
 				61A805EE1C611E790096473C /* Main.storyboard */,
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F8DB901C6511470096BAD1 /* BackgroundView.m in Sources */,
 				61F8DB8A1C630FDE0096BAD1 /* GameViewController.m in Sources */,
 				61A805ED1C611E790096473C /* TitleViewController.m in Sources */,
 				61A805EA1C611E790096473C /* AppDelegate.m in Sources */,

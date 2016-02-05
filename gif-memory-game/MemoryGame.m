@@ -87,7 +87,7 @@
             tile.visible = NO;
         }
     }
-    
+    self.numberOfTurns++;
     [self.selectedTiles removeAllObjects];
     
     BOOL winner = YES;

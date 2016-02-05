@@ -8,8 +8,7 @@
 
 #import "TitleViewController.h"
 #import <Masonry/Masonry.h>
-#import "MemoryGame.h"
-#import "MemoryTile.h"
+#import "GameViewController.h"
 
 @interface TitleViewController ()
 @property (nonatomic, strong) UIImageView *backgroundImageView;
@@ -29,12 +28,7 @@
     [self setupViewConstraints];
     [self setupViewContent];
     [self setupUserInteractions];
-    
-    MemoryGame *game = [MemoryGame sharedInstance];
-    [game newGameWithCompletion:^(BOOL success) {
-        
-    }];
-   
+ 
 }
 
 - (void)setupViews
@@ -109,7 +103,8 @@
 
 - (void)startTapped
 {
-    NSLog(@"Start tapped");
+    GameViewController *gvc = [[GameViewController alloc] init];
+    [self presentViewController:gvc animated:YES completion:nil];
 }
 
 - (void)aboutTapped

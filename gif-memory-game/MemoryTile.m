@@ -20,6 +20,8 @@
     _largeAnimatedURL = dict[@"images"][@"downsized"][@"url"];
     _ID = dict[@"id"];
     
+    _visible = NO;
+    
     return self;
 }
 @end

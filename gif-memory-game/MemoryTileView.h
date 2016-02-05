@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemoryTile.h"
 
-@interface MemoryTileView : UIView
+@interface MemoryTileView : UIControl
 
+- (instancetype)initWithTile:(MemoryTile *)tile;
+- (void)flipTile;
 @end
