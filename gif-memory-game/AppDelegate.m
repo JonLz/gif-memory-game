@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TitleViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    TitleViewController *titleVC = [[TitleViewController alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = titleVC;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

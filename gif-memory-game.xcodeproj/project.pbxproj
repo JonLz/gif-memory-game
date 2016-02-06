@@ -10,9 +10,7 @@
 		61A805E71C611E790096473C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E61C611E790096473C /* main.m */; };
 		61A805EA1C611E790096473C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E91C611E790096473C /* AppDelegate.m */; };
 		61A805ED1C611E790096473C /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805EC1C611E790096473C /* TitleViewController.m */; };
-		61A805F01C611E790096473C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A805EE1C611E790096473C /* Main.storyboard */; };
 		61A805F21C611E790096473C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A805F11C611E790096473C /* Assets.xcassets */; };
-		61A805F51C611E790096473C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A805F31C611E790096473C /* LaunchScreen.storyboard */; };
 		61A805FF1C612FE30096473C /* 8-BIT WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 61A805FE1C612FB50096473C /* 8-BIT WONDER.TTF */; };
 		61A806021C625D5A0096473C /* GiphyNetworkingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A806011C625D5A0096473C /* GiphyNetworkingModel.m */; };
 		61A806071C62652B0096473C /* GiphyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 61A806061C62652B0096473C /* GiphyResponse.json */; };
@@ -32,9 +30,7 @@
 		61A805E91C611E790096473C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		61A805EB1C611E790096473C /* TitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
 		61A805EC1C611E790096473C /* TitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
-		61A805EF1C611E790096473C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61A805F11C611E790096473C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		61A805F41C611E790096473C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61A805F61C611E790096473C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61A805FE1C612FB50096473C /* 8-BIT WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8-BIT WONDER.TTF"; path = "Assets/8-BIT WONDER.TTF"; sourceTree = "<group>"; };
 		61A806001C625D5A0096473C /* GiphyNetworkingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiphyNetworkingModel.h; sourceTree = "<group>"; };
@@ -44,14 +40,14 @@
 		61F8DB801C62BC3C0096BAD1 /* MemoryTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryTile.m; sourceTree = "<group>"; };
 		61F8DB821C62BC430096BAD1 /* MemoryGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryGame.h; sourceTree = "<group>"; };
 		61F8DB831C62BC430096BAD1 /* MemoryGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryGame.m; sourceTree = "<group>"; };
-		61F8DB851C630FB20096BAD1 /* MemoryTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryTileView.h; sourceTree = "<group>"; };
-		61F8DB861C630FB20096BAD1 /* MemoryTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryTileView.m; sourceTree = "<group>"; };
+		61F8DB851C630FB20096BAD1 /* MemoryTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemoryTileView.h; path = Views/MemoryTileView.h; sourceTree = "<group>"; };
+		61F8DB861C630FB20096BAD1 /* MemoryTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemoryTileView.m; path = Views/MemoryTileView.m; sourceTree = "<group>"; };
 		61F8DB881C630FDE0096BAD1 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		61F8DB891C630FDE0096BAD1 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		61F8DB8B1C63EC650096BAD1 /* NSMutableArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffle.h"; sourceTree = "<group>"; };
 		61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffle.m"; sourceTree = "<group>"; };
-		61F8DB8E1C6511470096BAD1 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
-		61F8DB8F1C6511470096BAD1 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
+		61F8DB8E1C6511470096BAD1 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundView.h; path = Views/BackgroundView.h; sourceTree = "<group>"; };
+		61F8DB8F1C6511470096BAD1 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundView.m; path = Views/BackgroundView.m; sourceTree = "<group>"; };
 		62F034761DB50E6DDF8589C1 /* Pods-gif-memory-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.release.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.release.xcconfig"; sourceTree = "<group>"; };
 		C6E566FB300982687BC895F1 /* Pods-gif-memory-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gif-memory-game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gif-memory-game/Pods-gif-memory-game.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA6BB4AA7D639EF40A49906 /* libPods-gif-memory-game.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gif-memory-game.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +74,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6140ECA41C6668ED00719355 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61F8DB851C630FB20096BAD1 /* MemoryTileView.h */,
+				61F8DB861C630FB20096BAD1 /* MemoryTileView.m */,
+				61F8DB8E1C6511470096BAD1 /* BackgroundView.h */,
+				61F8DB8F1C6511470096BAD1 /* BackgroundView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6140ECA51C66694000719355 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				61A806001C625D5A0096473C /* GiphyNetworkingModel.h */,
+				61A806011C625D5A0096473C /* GiphyNetworkingModel.m */,
+				61F8DB7F1C62BC3C0096BAD1 /* MemoryTile.h */,
+				61F8DB801C62BC3C0096BAD1 /* MemoryTile.m */,
+				61F8DB821C62BC430096BAD1 /* MemoryGame.h */,
+				61F8DB831C62BC430096BAD1 /* MemoryGame.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6140ECA61C66697400719355 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				61F8DB881C630FDE0096BAD1 /* GameViewController.h */,
+				61F8DB891C630FDE0096BAD1 /* GameViewController.m */,
+				61A805EB1C611E790096473C /* TitleViewController.h */,
+				61A805EC1C611E790096473C /* TitleViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6140ECA71C6669E500719355 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				61F8DB8B1C63EC650096BAD1 /* NSMutableArray+Shuffle.h */,
+				61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		61A805D91C611E790096473C = {
 			isa = PBXGroup;
 			children = (
@@ -101,24 +141,10 @@
 			children = (
 				61A805E81C611E790096473C /* AppDelegate.h */,
 				61A805E91C611E790096473C /* AppDelegate.m */,
-				61A806001C625D5A0096473C /* GiphyNetworkingModel.h */,
-				61A806011C625D5A0096473C /* GiphyNetworkingModel.m */,
-				61F8DB7F1C62BC3C0096BAD1 /* MemoryTile.h */,
-				61F8DB801C62BC3C0096BAD1 /* MemoryTile.m */,
-				61F8DB821C62BC430096BAD1 /* MemoryGame.h */,
-				61F8DB831C62BC430096BAD1 /* MemoryGame.m */,
-				61F8DB8B1C63EC650096BAD1 /* NSMutableArray+Shuffle.h */,
-				61F8DB8C1C63EC650096BAD1 /* NSMutableArray+Shuffle.m */,
-				61F8DB881C630FDE0096BAD1 /* GameViewController.h */,
-				61F8DB891C630FDE0096BAD1 /* GameViewController.m */,
-				61F8DB851C630FB20096BAD1 /* MemoryTileView.h */,
-				61F8DB861C630FB20096BAD1 /* MemoryTileView.m */,
-				61F8DB8E1C6511470096BAD1 /* BackgroundView.h */,
-				61F8DB8F1C6511470096BAD1 /* BackgroundView.m */,
-				61A805EB1C611E790096473C /* TitleViewController.h */,
-				61A805EC1C611E790096473C /* TitleViewController.m */,
-				61A805EE1C611E790096473C /* Main.storyboard */,
-				61A805F31C611E790096473C /* LaunchScreen.storyboard */,
+				6140ECA51C66694000719355 /* Models */,
+				6140ECA71C6669E500719355 /* Categories */,
+				6140ECA61C66697400719355 /* View Controllers */,
+				6140ECA41C6668ED00719355 /* Views */,
 				61A805F61C611E790096473C /* Info.plist */,
 				61A806061C62652B0096473C /* GiphyResponse.json */,
 				61A805E51C611E790096473C /* Supporting Files */,
@@ -213,9 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61A805FF1C612FE30096473C /* 8-BIT WONDER.TTF in Resources */,
-				61A805F51C611E790096473C /* LaunchScreen.storyboard in Resources */,
 				61A805F21C611E790096473C /* Assets.xcassets in Resources */,
-				61A805F01C611E790096473C /* Main.storyboard in Resources */,
 				61A806071C62652B0096473C /* GiphyResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,25 +313,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		61A805EE1C611E790096473C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				61A805EF1C611E790096473C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		61A805F31C611E790096473C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				61A805F41C611E790096473C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		61A805F71C611E790096473C /* Debug */ = {
