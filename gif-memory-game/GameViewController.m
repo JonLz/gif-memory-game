@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor blackColor];
     _memoryTileViews = [[NSMutableArray alloc] init];
     
     _game = [MemoryGame sharedInstance];
@@ -85,7 +85,11 @@
 
 - (void)memoryTileViewTapped:(MemoryTileView *)memoryTileView
 {
-    [memoryTileView flipTile];
+    // ask the model what to do
+    [self.game handleTurn:memoryTileView.tile];
+    
+    // update the view appropriately
+    //[memoryTileView flipTile];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *tiles;
 @property (nonatomic, strong) NSMutableArray *selectedTiles;
 @property (nonatomic, assign) NSUInteger numberOfTurns;
-
+@property (nonatomic, assign) BOOL readyForNextTurn;
 @end
 
 @implementation MemoryGame
@@ -25,7 +25,7 @@
     
     _tiles = [[NSMutableArray alloc] init];
     _selectedTiles = [[NSMutableArray alloc] init];
-
+    _readyForNextTurn = YES;
     return self;
 }
 
@@ -58,7 +58,9 @@
         for (NSDictionary *result in imageData) {
             MemoryTile *tile = [[MemoryTile alloc] initWithDictionary:result];
             [self.tiles addObject:tile];
-            [self.tiles addObject:tile];
+            
+            MemoryTile *tileCopy = [[MemoryTile alloc] initWithDictionary:result];
+            [self.tiles addObject:tileCopy];
         }
         
         [self.tiles shuffle];
@@ -72,23 +74,33 @@
 
 - (void)handleTurn:(MemoryTile *)tile
 {
+    if (tile.visible || !self.readyForNextTurn) {
+        return;
+    }
+    
     tile.visible = YES;
-   [self.selectedTiles addObject:tile];
+    [self.selectedTiles addObject:tile];
     
     if ([self.selectedTiles count] == 1) {
         return;
     }
-
+  
     MemoryTile *firstTile = self.selectedTiles[0];
     MemoryTile *secondTile = self.selectedTiles[1];
     
-    if (![firstTile.ID isEqualToString:secondTile.ID]) {
-        for (MemoryTile *tile in self.selectedTiles) {
-            tile.visible = NO;
-        }
+    if ([firstTile.ID isEqualToString:secondTile.ID]) {
+        [self.selectedTiles removeAllObjects];
+    } else {
+        self.readyForNextTurn = NO;
+       
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            firstTile.visible = NO;
+            secondTile.visible = NO;
+            self.readyForNextTurn = YES;
+        });
+        
+        [self.selectedTiles removeAllObjects];
     }
-    self.numberOfTurns++;
-    [self.selectedTiles removeAllObjects];
     
     BOOL winner = YES;
     for (MemoryTile *tile in self.tiles) {

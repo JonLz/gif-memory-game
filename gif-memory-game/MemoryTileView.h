@@ -10,7 +10,7 @@
 #import "MemoryTile.h"
 
 @interface MemoryTileView : UIControl
-
+@property (nonatomic, strong, readonly) MemoryTile *tile;
 - (instancetype)initWithTile:(MemoryTile *)tile;
 - (void)flipTile;
 @end

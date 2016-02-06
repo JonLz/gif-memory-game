@@ -26,7 +26,6 @@
     if (!self) return nil;
    
     _tile = tile;
-    
     _imageView = [[UIImageView alloc] init];
     [_imageView sd_setImageWithURL:tile.smallAnimatedURL];
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -37,9 +36,13 @@
     
     [self setupViewHierarchy];
     [self setupViewConstraints];
+    [self setupTileObserver];
     
     self.imageView.hidden = YES;
     self.clipsToBounds = YES;
+    
+    self.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.layer.borderWidth = 1.0;
     
     return self;
 }
@@ -60,7 +63,23 @@
         make.edges.equalTo(self);
     }];
     
-    
+}
+
+- (void)setupTileObserver
+{
+    [self.tile addObserver:self forKeyPath:@"visible" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"visible"]) {
+        BOOL newValue = [[change valueForKey:NSKeyValueChangeNewKey] boolValue];
+        BOOL oldValue = [[change valueForKey:NSKeyValueChangeOldKey] boolValue];
+        
+        self.imageView.hidden = oldValue;
+        self.backgroundImageView.hidden = newValue;
+        
+    }
 }
 
 - (void)flipTile
