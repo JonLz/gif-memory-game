@@ -12,6 +12,7 @@
 @interface MemoryGame : NSObject
 
 @property (nonatomic, strong, readonly) NSMutableArray *tiles;
+@property (nonatomic, assign, readonly) NSUInteger numberOfTurns;
 
 - (void)newGameWithCompletion:(void (^)(BOOL success))completion;
 - (void)handleTurn:(MemoryTile *)tile;

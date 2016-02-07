@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6140ECAD1C666EAC00719355 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAC1C666EAC00719355 /* TransitionAnimator.m */; };
+		6140ECB01C66C26400719355 /* StatusBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAF1C66C26400719355 /* StatusBoxView.m */; };
 		61A805E71C611E790096473C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E61C611E790096473C /* main.m */; };
 		61A805EA1C611E790096473C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E91C611E790096473C /* AppDelegate.m */; };
 		61A805ED1C611E790096473C /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805EC1C611E790096473C /* TitleViewController.m */; };
@@ -24,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6140ECAB1C666EAC00719355 /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
+		6140ECAC1C666EAC00719355 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
+		6140ECAE1C66C26400719355 /* StatusBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusBoxView.h; path = Views/StatusBoxView.h; sourceTree = "<group>"; };
+		6140ECAF1C66C26400719355 /* StatusBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBoxView.m; path = Views/StatusBoxView.m; sourceTree = "<group>"; };
 		61A805E21C611E790096473C /* gif-memory-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gif-memory-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A805E61C611E790096473C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61A805E81C611E790096473C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 				61F8DB861C630FB20096BAD1 /* MemoryTileView.m */,
 				61F8DB8E1C6511470096BAD1 /* BackgroundView.h */,
 				61F8DB8F1C6511470096BAD1 /* BackgroundView.m */,
+				6140ECAE1C66C26400719355 /* StatusBoxView.h */,
+				6140ECAF1C66C26400719355 /* StatusBoxView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -141,6 +149,8 @@
 			children = (
 				61A805E81C611E790096473C /* AppDelegate.h */,
 				61A805E91C611E790096473C /* AppDelegate.m */,
+				6140ECAB1C666EAC00719355 /* TransitionAnimator.h */,
+				6140ECAC1C666EAC00719355 /* TransitionAnimator.m */,
 				6140ECA51C66694000719355 /* Models */,
 				6140ECA71C6669E500719355 /* Categories */,
 				6140ECA61C66697400719355 /* View Controllers */,
@@ -301,6 +311,7 @@
 			files = (
 				61F8DB901C6511470096BAD1 /* BackgroundView.m in Sources */,
 				61F8DB8A1C630FDE0096BAD1 /* GameViewController.m in Sources */,
+				6140ECB01C66C26400719355 /* StatusBoxView.m in Sources */,
 				61A805ED1C611E790096473C /* TitleViewController.m in Sources */,
 				61A805EA1C611E790096473C /* AppDelegate.m in Sources */,
 				61F8DB841C62BC430096BAD1 /* MemoryGame.m in Sources */,
@@ -308,6 +319,7 @@
 				61F8DB8D1C63EC650096BAD1 /* NSMutableArray+Shuffle.m in Sources */,
 				61A805E71C611E790096473C /* main.m in Sources */,
 				61A806021C625D5A0096473C /* GiphyNetworkingModel.m in Sources */,
+				6140ECAD1C666EAC00719355 /* TransitionAnimator.m in Sources */,
 				61F8DB871C630FB20096BAD1 /* MemoryTileView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,7 +38,7 @@
     [self setupViewConstraints];
     [self setupTileObserver];
     
-    self.imageView.hidden = YES;
+    _imageView.hidden = YES;
     self.clipsToBounds = YES;
     
     self.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -49,8 +49,8 @@
 
 - (void)setupViewHierarchy
 {
-    [self addSubview:self.backgroundImageView];
     [self addSubview:self.imageView];
+    [self addSubview:self.backgroundImageView];
 }
 
 - (void)setupViewConstraints
@@ -76,16 +76,30 @@
         BOOL newValue = [[change valueForKey:NSKeyValueChangeNewKey] boolValue];
         BOOL oldValue = [[change valueForKey:NSKeyValueChangeOldKey] boolValue];
         
-        self.imageView.hidden = oldValue;
-        self.backgroundImageView.hidden = newValue;
-        
+        [self flipTileFrom:oldValue toNewValue:newValue];
     }
 }
 
-- (void)flipTile
+- (void)dealloc
 {
-    self.imageView.hidden = !self.imageView.hidden;
-    self.backgroundImageView.hidden = !self.backgroundImageView.hidden;
+    [self.tile removeObserver:self forKeyPath:@"visible"];
+
+}
+
+- (void)flipTileFrom:(BOOL)oldValue toNewValue:(BOOL)newValue
+{
+    if (oldValue == newValue) {
+        return;
+    }
+    
+    // we are observing the value for visibility. if its true, the tile should be visible!
+    BOOL shouldBeVisible = newValue == 1 ? YES : NO;
+    
+    if (shouldBeVisible) {
+        [UIView transitionFromView:self.backgroundImageView toView:self.imageView duration:0.5f options: UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionShowHideTransitionViews completion:nil];
+    } else {
+        [UIView transitionFromView:self.imageView  toView:self.backgroundImageView duration:0.5f options:UIViewAnimationOptionTransitionFlipFromLeft | UIViewAnimationOptionShowHideTransitionViews completion:nil];
+    }
 }
 
 @end

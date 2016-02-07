@@ -85,6 +85,10 @@
         return;
     }
   
+    if (self.readyForNextTurn) {
+        self.numberOfTurns++;
+    }
+    
     MemoryTile *firstTile = self.selectedTiles[0];
     MemoryTile *secondTile = self.selectedTiles[1];
     
@@ -93,7 +97,7 @@
     } else {
         self.readyForNextTurn = NO;
        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             firstTile.visible = NO;
             secondTile.visible = NO;
             self.readyForNextTurn = YES;

@@ -8,6 +8,8 @@
 
 #import "BackgroundView.h"
 
+// http://www.raywenderlich.com/33496/core-graphics-tutorial-patterns
+
 static inline double radians (double degrees)
 {
     return degrees * M_PI/180;

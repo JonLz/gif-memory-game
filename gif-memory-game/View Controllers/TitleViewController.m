@@ -9,8 +9,9 @@
 #import "TitleViewController.h"
 #import <Masonry/Masonry.h>
 #import "GameViewController.h"
+#import "TransitionAnimator.h"
 
-@interface TitleViewController ()
+@interface TitleViewController () <UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIStackView *menuStackView;
@@ -104,6 +105,8 @@
 - (void)startTapped
 {
     GameViewController *gvc = [[GameViewController alloc] init];
+    gvc.transitioningDelegate = self;
+    
     [self presentViewController:gvc animated:YES completion:nil];
 }
 
@@ -120,6 +123,22 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.userInteractionEnabled = YES;
     return label;
+}
+
+#pragma mark
+#pragma mark View Transition Handlers
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source {
+    
+    TransitionAnimator *animator = [TransitionAnimator new];
+    animator.presenting = YES;
+    return animator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    TransitionAnimator *animator = [TransitionAnimator new];
+    return animator;
 }
 
 - (void)didReceiveMemoryWarning {
