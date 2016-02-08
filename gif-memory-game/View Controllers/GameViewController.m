@@ -53,7 +53,7 @@
 - (void)setupDisconnectedUI
 {
     UILabel *ohno = [[UILabel alloc] init];
-    ohno.text = @"Oh no!\nNo internets found!\n\nWe need that to play!";
+    ohno.text = @"Oh no!\n\nSomething went wrong\n\nCheck your internet connection and try again!";
     ohno.font = [UIFont fontWithName:@"8BITWONDERNominal" size:21];
     ohno.textColor = [UIColor whiteColor];
     ohno.numberOfLines = 100;

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6140ECAD1C666EAC00719355 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAC1C666EAC00719355 /* TransitionAnimator.m */; };
 		6140ECB01C66C26400719355 /* StatusBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAF1C66C26400719355 /* StatusBoxView.m */; };
+		619F2F381C691FD7005E5D05 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 619F2F371C691FD7005E5D05 /* AboutViewController.m */; };
 		61A805E71C611E790096473C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E61C611E790096473C /* main.m */; };
 		61A805EA1C611E790096473C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E91C611E790096473C /* AppDelegate.m */; };
 		61A805ED1C611E790096473C /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805EC1C611E790096473C /* TitleViewController.m */; };
@@ -30,6 +31,8 @@
 		6140ECAC1C666EAC00719355 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		6140ECAE1C66C26400719355 /* StatusBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusBoxView.h; path = Views/StatusBoxView.h; sourceTree = "<group>"; };
 		6140ECAF1C66C26400719355 /* StatusBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBoxView.m; path = Views/StatusBoxView.m; sourceTree = "<group>"; };
+		619F2F361C691FD7005E5D05 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		619F2F371C691FD7005E5D05 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		61A805E21C611E790096473C /* gif-memory-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gif-memory-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A805E61C611E790096473C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61A805E81C611E790096473C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				61F8DB891C630FDE0096BAD1 /* GameViewController.m */,
 				61A805EB1C611E790096473C /* TitleViewController.h */,
 				61A805EC1C611E790096473C /* TitleViewController.m */,
+				619F2F361C691FD7005E5D05 /* AboutViewController.h */,
+				619F2F371C691FD7005E5D05 /* AboutViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				61A805E71C611E790096473C /* main.m in Sources */,
 				61A806021C625D5A0096473C /* GiphyNetworkingModel.m in Sources */,
 				6140ECAD1C666EAC00719355 /* TransitionAnimator.m in Sources */,
+				619F2F381C691FD7005E5D05 /* AboutViewController.m in Sources */,
 				61F8DB871C630FB20096BAD1 /* MemoryTileView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

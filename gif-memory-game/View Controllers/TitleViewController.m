@@ -9,6 +9,7 @@
 #import "TitleViewController.h"
 #import <Masonry/Masonry.h>
 #import "GameViewController.h"
+#import "AboutViewController.h"
 #import "TransitionAnimator.h"
 
 @interface TitleViewController () <UIViewControllerTransitioningDelegate>
@@ -17,6 +18,8 @@
 @property (nonatomic, strong) UIStackView *menuStackView;
 @property (nonatomic, strong) UILabel *startLabel;
 @property (nonatomic, strong) UILabel *aboutLabel;
+
+@property (nonatomic, assign) TransitionDirection transitionDirection;
 @end
 
 @implementation TitleViewController
@@ -114,13 +117,16 @@
 {
     GameViewController *gvc = [[GameViewController alloc] init];
     gvc.transitioningDelegate = self;
-    
+    self.transitionDirection = Down;
     [self presentViewController:gvc animated:YES completion:nil];
 }
 
 - (void)aboutTapped
 {
-    NSLog(@"About tapped");
+    AboutViewController *avc = [[AboutViewController alloc] init];
+    avc.transitioningDelegate = self;
+    self.transitionDirection = Right;
+    [self presentViewController:avc animated:YES completion:nil];
 }
 
 - (UILabel *)menuLabel
@@ -139,13 +145,13 @@
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
     
-    TransitionAnimator *animator = [TransitionAnimator new];
+    TransitionAnimator *animator = [[TransitionAnimator alloc] initWithDirection:self.transitionDirection];
     animator.presenting = YES;
     return animator;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    TransitionAnimator *animator = [TransitionAnimator new];
+    TransitionAnimator *animator = [[TransitionAnimator alloc] initWithDirection:self.transitionDirection];
     return animator;
 }
 
