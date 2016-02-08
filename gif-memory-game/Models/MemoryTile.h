@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface MemoryTile : NSObject
+@interface MemoryTile : NSObject <NSCoding>
 @property (nonatomic, strong) NSURL *smallStillURL;
 @property (nonatomic, strong) NSURL *largeStillURL;
 @property (nonatomic, strong) NSURL *smallAnimatedURL;

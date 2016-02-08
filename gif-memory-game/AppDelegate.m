@@ -21,7 +21,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = titleVC;
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 

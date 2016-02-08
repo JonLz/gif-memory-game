@@ -37,8 +37,10 @@
     [self setupViewHierarchy];
     [self setupViewConstraints];
     [self setupTileObserver];
+   
+    _imageView.hidden = !_tile.visible;
+    _backgroundImageView.hidden = !_imageView.hidden;
     
-    _imageView.hidden = YES;
     self.clipsToBounds = YES;
     
     self.layer.borderColor = [UIColor whiteColor].CGColor;

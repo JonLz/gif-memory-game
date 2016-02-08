@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *selectedTiles;
 @property (nonatomic, assign) NSUInteger numberOfTurns;
 @property (nonatomic, assign) BOOL readyForNextTurn;
+@property (nonatomic, assign) BOOL gameInProgress;
 @end
 
 @implementation MemoryGame
@@ -26,15 +27,51 @@
     _tiles = [[NSMutableArray alloc] init];
     _selectedTiles = [[NSMutableArray alloc] init];
     _readyForNextTurn = YES;
+    _gameInProgress = YES;
     return self;
 }
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (!self) return nil;
+    
+    _tiles = [aDecoder decodeObjectForKey:@"tiles"];
+    _selectedTiles = [aDecoder decodeObjectForKey:@"selectedTiles"];
+    _numberOfTurns = [aDecoder decodeIntegerForKey:@"numberOfTurns"];
+    _readyForNextTurn = [aDecoder decodeBoolForKey:@"readyForNextTurn"];
+    _gameInProgress = [aDecoder decodeBoolForKey:@"gameInProgress"];
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.tiles forKey:@"tiles"];
+    [aCoder encodeObject:self.selectedTiles forKey:@"selectedTiles"];
+    [aCoder encodeInteger:self.numberOfTurns forKey:@"numberOfTurns"];
+    [aCoder encodeBool:self.readyForNextTurn forKey:@"readyForNextTurn"];
+    [aCoder encodeBool:self.gameInProgress forKey:@"gameInProgress"];
+}
+
 
 +(instancetype)sharedInstance
 {
     static dispatch_once_t once;
     static id sharedInstance;
     dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
+        
+        // Try to load the saved game
+        // Or else default to a new game
+        
+        NSData *savedGameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"com.memory.game"];
+        
+        if (savedGameData) {
+            sharedInstance = [NSKeyedUnarchiver unarchiveObjectWithData:savedGameData];
+        } else {
+            sharedInstance = [[self alloc] init];
+        }
     });
     return sharedInstance;
 }
@@ -47,7 +84,20 @@
     [self generateTilesWithCompletion:^(BOOL success) {
         completion(YES);
     }];
+}
 
+- (void)saveCurrentGame
+{
+    if (self.gameInProgress) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSData *gameData = [NSKeyedArchiver archivedDataWithRootObject:self];
+        [defaults setObject:gameData forKey:@"com.memory.game"];
+    }
+}
+
+- (BOOL)savedGameExists
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"com.memory.game"] != nil;
 }
 
 - (void)generateTilesWithCompletion:(void (^)(BOOL success))completion
@@ -114,11 +164,13 @@
     }
     
     if (winner) {
-        NSLog(@"You win");
+        self.gameInProgress = NO;
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"com.memory.game"];
     }
     
     return;
     
     
 }
+
 @end

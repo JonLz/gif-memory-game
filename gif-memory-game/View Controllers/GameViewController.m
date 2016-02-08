@@ -27,13 +27,23 @@
     _memoryTileViews = [[NSMutableArray alloc] init];
     
     _game = [MemoryGame sharedInstance];
-    [_game newGameWithCompletion:^(BOOL success) {
-        [self setupStackViews];
-        [self setupTileInteractions];
-        [self setupStatusBoxView];
-        [self setupExitArrow];
-    }];
-    
+    if ([_game savedGameExists]) {
+        [self setupUI];
+        
+    } else {
+        [_game newGameWithCompletion:^(BOOL success) {
+            [self setupUI];
+        
+        }];
+    }
+}
+
+- (void)setupUI
+{
+    [self setupStackViews];
+    [self setupTileInteractions];
+    [self setupStatusBoxView];
+    [self setupExitArrow];
 }
 
 - (void)setupStackViews
@@ -137,6 +147,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.game saveCurrentGame];
+}
 /*
 #pragma mark - Navigation
 

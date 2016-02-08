@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "MemoryTile.h"
 
-@interface MemoryGame : NSObject
+@interface MemoryGame : NSObject <NSCoding>
 
 @property (nonatomic, strong, readonly) NSMutableArray *tiles;
 @property (nonatomic, assign, readonly) NSUInteger numberOfTurns;
 
 - (void)newGameWithCompletion:(void (^)(BOOL success))completion;
+- (void)saveCurrentGame;
+- (BOOL)savedGameExists;
+
 - (void)handleTurn:(MemoryTile *)tile;
 + (instancetype)sharedInstance;
 @end

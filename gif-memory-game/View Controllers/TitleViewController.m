@@ -80,10 +80,6 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.text = @"GIF\nMEMORY\nWARS";
     
-    // Menu Labels
-    self.startLabel.text = @"Start";
-    self.aboutLabel.text = @"About";
-    
     // Menu Stack View
     self.menuStackView.alignment = UIStackViewAlignmentCenter;
     self.menuStackView.distribution = UIStackViewDistributionFillEqually;
@@ -93,6 +89,18 @@
     [self.menuStackView addArrangedSubview:self.aboutLabel];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Menu Labels
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"com.memory.game"] == nil) {
+        self.startLabel.text = @"Start";
+    } else {
+        self.startLabel.text = @"Resume";
+    }
+    
+    self.aboutLabel.text = @"About";
+
+}
 - (void)setupUserInteractions
 {
     UITapGestureRecognizer *startTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startTapped)];

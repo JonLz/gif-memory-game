@@ -31,7 +31,7 @@
     _turnLabel.font = [UIFont fontWithName:@"8BITWONDERNominal" size:18];
     _turnLabel.textColor = [UIColor whiteColor];
     _turnLabel.textAlignment = NSTextAlignmentLeft;
-    _turnLabel.text = @"Turns: 0";
+    [self updateTurnLabel:_game.numberOfTurns];
     
     [self addSubview:_turnLabel];
     
