@@ -15,6 +15,7 @@
 @interface TitleViewController () <UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) UIStackView *menuStackView;
 @property (nonatomic, strong) UILabel *startLabel;
 @property (nonatomic, strong) UILabel *aboutLabel;
@@ -39,6 +40,7 @@
 {
     self.backgroundImageView = [[UIImageView alloc] init];
     self.titleLabel = [[UILabel alloc] init];
+    self.logoImageView = [[UIImageView alloc] init];
     self.menuStackView = [[UIStackView alloc] init];
     self.startLabel = [self menuLabel];
     self.aboutLabel = [self menuLabel];
@@ -48,6 +50,7 @@
 {
     [self.view addSubview:self.backgroundImageView];
     [self.view addSubview:self.titleLabel];
+    [self.view addSubview:self.logoImageView];
     [self.view addSubview:self.menuStackView];
 }
 
@@ -60,6 +63,12 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_topMargin).mas_offset(@90);
         make.centerX.equalTo(self.view);
+    }];
+    
+    [self.logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(20);
+        make.centerX.equalTo(self.view);
+        make.height.and.width.equalTo(@100);
     }];
     
     [self.menuStackView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,6 +91,12 @@
     self.titleLabel.numberOfLines = 3;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.text = @"GIF\nMEMORY\nWARS";
+    
+    // Logo Image
+    UIImage *image = [[UIImage imageNamed:@"SwordLogo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.logoImageView.image = image;
+    self.logoImageView.tintColor = [UIColor whiteColor];
+    self.logoImageView.contentMode = UIViewContentModeScaleAspectFit;
     
     // Menu Stack View
     self.menuStackView.alignment = UIStackViewAlignmentCenter;
