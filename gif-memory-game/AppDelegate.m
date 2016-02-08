@@ -21,6 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = titleVC;
     [self.window makeKeyAndVisible];
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"com.memory.game"];
     return YES;
 }
 

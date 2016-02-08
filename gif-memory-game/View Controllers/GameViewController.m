@@ -32,8 +32,12 @@
         
     } else {
         [_game newGameWithCompletion:^(BOOL success) {
-            [self setupUI];
-        
+            
+            if (success) {
+                [self setupUI];
+            } else {
+                [self setupDisconnectedUI];
+            }
         }];
     }
 }
@@ -43,6 +47,22 @@
     [self setupStackViews];
     [self setupTileInteractions];
     [self setupStatusBoxView];
+    [self setupExitArrow];
+}
+
+- (void)setupDisconnectedUI
+{
+    UILabel *ohno = [[UILabel alloc] init];
+    ohno.text = @"Oh no!\nNo internets found!\n\nWe need that to play!";
+    ohno.font = [UIFont fontWithName:@"8BITWONDERNominal" size:21];
+    ohno.textColor = [UIColor whiteColor];
+    ohno.numberOfLines = 100;
+    ohno.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:ohno];
+    [ohno mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.view);
+        make.centerY.and.centerX.equalTo(self.view);
+    }];
     [self setupExitArrow];
 }
 
@@ -149,7 +169,9 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self.game saveCurrentGame];
+    if ([self.game.tiles count] > 0) {
+        [self.game saveCurrentGame];
+    }
 }
 /*
 #pragma mark - Navigation

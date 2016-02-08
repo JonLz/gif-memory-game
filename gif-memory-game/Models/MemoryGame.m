@@ -82,7 +82,7 @@
     [self.selectedTiles removeAllObjects];
     self.numberOfTurns = 0;
     [self generateTilesWithCompletion:^(BOOL success) {
-        completion(YES);
+        completion(success);
     }];
 }
 
