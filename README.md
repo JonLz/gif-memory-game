@@ -8,6 +8,12 @@ This app will hit on many iOS fundamental concepts and help you understand how t
 ### The Project
 A proof of concept for a memory game that everyone's played before. We'll utilize the Giphy API to add some flavor (and of course practice networking code). We'll also give users the option to choose their own content for the game. Either from trending topics (via the Twitter API) or defaulting to the latest trending Giphy GIFs. The game will also persist game data and any user selected options.
 
+### Screenshots
+![Title](/screenshots/Title.png)
+![Customize](/screenshots/Customize.png)
+![Trending](/screenshots/Trending.png)
+![Game](/screenshots/Game.png)
+
 ### Concepts Covered
 + Networking
 + Table Views
@@ -32,9 +38,12 @@ There's a short write-up for each commit as well as some more information about 
 ### Notes
 I made this project mostly to help people new to iOS development but it was also a great exercise to practice. I love the concept of working around a constraint and for this one I gave myself 1 week to work in my off hours (evenings) to build something that would provide value to both myself and others.
 
-This project came in at just over a week as the scope kept slowly ballooning. Total hours is somewhere in the 10 - 15 range, about 2 per day for 1 week (plus some).
+This project came in at just over a week as the scope kept slowly ballooning. Total hours is somewhere in the 10 - 15 range, about 2 per day for 1 week (plus some). As the intention was not to pore over every aspect of code, I may have missed some things or taken some shortcuts. Please help fill in any obvious gaps!
 
 I welcome any and all contributions, comments, pull requests, feedback, criticism etc. The point of this project is to provide something back to the community that's provided so much to me so let's not lose sight of that goal.
+
+### Future Additions
++ Swift edition coming soon
 
 ### License
 This project is released under the MIT license (MIT).
