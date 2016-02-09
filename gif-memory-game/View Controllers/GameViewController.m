@@ -48,6 +48,7 @@
     [self setupTileInteractions];
     [self setupStatusBoxView];
     [self setupExitArrow];
+    
 }
 
 - (void)setupDisconnectedUI

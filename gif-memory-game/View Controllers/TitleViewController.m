@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) UIStackView *menuStackView;
 @property (nonatomic, strong) UILabel *startLabel;
+@property (nonatomic, strong) UILabel *restartGameLabel;
 @property (nonatomic, strong) UILabel *settingsLabel;
 @property (nonatomic, strong) UILabel *aboutLabel;
 
@@ -45,6 +46,7 @@
     self.logoImageView = [[UIImageView alloc] init];
     self.menuStackView = [[UIStackView alloc] init];
     self.startLabel = [self menuLabel];
+    self.restartGameLabel = [self menuLabel];
     self.settingsLabel = [self menuLabel];
     self.aboutLabel = [self menuLabel];
 }
@@ -108,6 +110,7 @@
     self.menuStackView.spacing = 8.0f;
     
     [self.menuStackView addArrangedSubview:self.startLabel];
+    [self.menuStackView addArrangedSubview:self.restartGameLabel];
     [self.menuStackView addArrangedSubview:self.settingsLabel];
     [self.menuStackView addArrangedSubview:self.aboutLabel];
     
@@ -118,10 +121,13 @@
     // Menu Labels
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"com.memory.game"] == nil) {
         self.startLabel.text = @"Start";
+        self.restartGameLabel.hidden = YES;
     } else {
         self.startLabel.text = @"Resume";
+        self.restartGameLabel.hidden = NO;
     }
     
+    self.restartGameLabel.text = @"New Game";
     self.settingsLabel.text = @"Customize";
     self.aboutLabel.text = @"About";
 
@@ -130,6 +136,9 @@
 {
     UITapGestureRecognizer *startTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startTapped)];
     [self.startLabel addGestureRecognizer:startTap];
+    
+    UITapGestureRecognizer *newGameTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(newGameTapped)];
+    [self.restartGameLabel addGestureRecognizer:newGameTap];
     
     UITapGestureRecognizer *settingsTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingsTapped)];
     [self.settingsLabel addGestureRecognizer:settingsTap];
@@ -140,6 +149,16 @@
 
 - (void)startTapped
 {
+    GameViewController *gvc = [[GameViewController alloc] init];
+    gvc.transitioningDelegate = self;
+    self.transitionDirection = Down;
+    [self presentViewController:gvc animated:YES completion:nil];
+}
+
+- (void)newGameTapped
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"com.memory.game"];
+    
     GameViewController *gvc = [[GameViewController alloc] init];
     gvc.transitioningDelegate = self;
     self.transitionDirection = Down;

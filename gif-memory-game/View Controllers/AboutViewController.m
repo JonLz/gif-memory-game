@@ -111,7 +111,7 @@
 
 - (void)tappedLabel
 {
-    NSURL *url = [NSURL URLWithString:@"http://www.jlazar.com/ios-memory-game"];
+    NSURL *url = [NSURL URLWithString:@"http://www.github.com/JonLz/gif-memory-game"];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
     }
