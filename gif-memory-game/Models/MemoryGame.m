@@ -81,6 +81,8 @@
     [self.tiles removeAllObjects];
     [self.selectedTiles removeAllObjects];
     self.numberOfTurns = 0;
+    self.gameInProgress = YES;
+    
     [self generateTilesWithCompletion:^(BOOL success) {
         completion(success);
     }];
@@ -92,6 +94,7 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSData *gameData = [NSKeyedArchiver archivedDataWithRootObject:self];
         [defaults setObject:gameData forKey:@"com.memory.game"];
+        [defaults synchronize];
     }
 }
 
@@ -102,24 +105,45 @@
 
 - (void)generateTilesWithCompletion:(void (^)(BOOL success))completion
 {
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    NSString *keyword = [def objectForKey:@"com.memory.keyword"];
+   
     GiphyNetworkingModel *sharedGiphyAPI = [GiphyNetworkingModel sharedInstance];
-    [sharedGiphyAPI fetchTrendingGiphyImageData:^(NSArray *imageData) {
-        
-        for (NSDictionary *result in imageData) {
-            MemoryTile *tile = [[MemoryTile alloc] initWithDictionary:result];
-            [self.tiles addObject:tile];
+    
+    if (keyword) {
+        [sharedGiphyAPI fetchGiphyImageDataForSearchTerm:keyword success:^(NSArray *imageData) {
+            [self loadTilesWithImages:imageData];
+            completion(YES);
             
-            MemoryTile *tileCopy = [[MemoryTile alloc] initWithDictionary:result];
-            [self.tiles addObject:tileCopy];
-        }
+        } failure:^(NSError *error) {
+            completion(NO);
+        }];
         
-        [self.tiles shuffle];
-        completion(YES);
+    } else {
+        [sharedGiphyAPI fetchTrendingGiphyImageData:^(NSArray *imageData) {
+            [self loadTilesWithImages:imageData];
+            completion(YES);
+            
+        } failure:^(NSError *error) {
+            completion(NO);
+            
+        }];
+    }
+    
+}
+
+- (void)loadTilesWithImages:(NSArray *)imageData
+{
+    for (NSDictionary *result in imageData) {
+        MemoryTile *tile = [[MemoryTile alloc] initWithDictionary:result];
+        [self.tiles addObject:tile];
         
-    } failure:^(NSError *error) {
-        completion(NO);
-        
-    }];
+        MemoryTile *tileCopy = [[MemoryTile alloc] initWithDictionary:result];
+        [self.tiles addObject:tileCopy];
+    }
+    
+    [self.tiles shuffle];
 }
 
 - (void)handleTurn:(MemoryTile *)tile

@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UITableView *trendingTopicsTableView;
 @property (nonatomic, strong) NSArray *trends;
+@property (nonatomic, strong) UILabel *noGIFsFoundLabel;
+@property (nonatomic, strong) NSString *keyword;
 @end
 
 @implementation TrendingViewController
@@ -30,7 +32,14 @@
     [self setupViewContent];
     [self setupExitArrow];
     
+    [self loadKeyword];
     [self fetchTrends];
+}
+
+- (void)loadKeyword {
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    self.keyword = [def objectForKey:@"com.memory.keyword"];
 }
 
 - (void)setupViews
@@ -38,9 +47,11 @@
     self.titleLabel = [[UILabel alloc] init];
     self.imageView = [[UIImageView alloc] init];
     self.trendingTopicsTableView = [[UITableView alloc] init];
+    self.noGIFsFoundLabel = [[UILabel alloc] init];
     
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.imageView];
+    [self.view addSubview:self.noGIFsFoundLabel];
     [self.view addSubview:self.trendingTopicsTableView];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -52,6 +63,12 @@
         make.left.and.right.equalTo(self.view);
         make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
         make.height.equalTo(@200);
+    }];
+    
+    [self.noGIFsFoundLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.bottom.equalTo(self.imageView);
+        make.left.equalTo(self.imageView).offset(15);
+        make.right.equalTo(self.imageView).offset(-15);
     }];
     
     [self.trendingTopicsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -72,11 +89,19 @@
     self.imageView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.imageView.layer.borderWidth = 1.0f;
     
+    self.noGIFsFoundLabel.text = @"Sorry! No GIFS found for this trend";
+    self.noGIFsFoundLabel.numberOfLines = 2;
+    self.noGIFsFoundLabel.textColor = [UIColor whiteColor];
+    self.noGIFsFoundLabel.font = [UIFont fontWithName:@"8BITWONDERNominal" size:18];
+    self.noGIFsFoundLabel.textAlignment = NSTextAlignmentCenter;
+    self.noGIFsFoundLabel.hidden = YES;
+    
     self.trendingTopicsTableView.delegate = self;
     self.trendingTopicsTableView.dataSource = self;
     [self.trendingTopicsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.trendingTopicsTableView.backgroundColor = [UIColor blackColor];
     self.trendingTopicsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 //    self.trendingTopicsTableView.layer.borderColor = [UIColor whiteColor].CGColor;
 //    self.trendingTopicsTableView.layer.borderWidth = 1.0f;
     
@@ -114,6 +139,14 @@
         self.trends = trends;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.trendingTopicsTableView reloadData];
+            for (NSString *trend in self.trends){
+                
+                if ([trend isEqualToString:self.keyword]) {
+                    NSIndexPath *ip = [NSIndexPath indexPathForRow:[self.trends indexOfObject:trend] inSection:0];
+                    [self.trendingTopicsTableView selectRowAtIndexPath:ip animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+                    [self tableView:self.trendingTopicsTableView didSelectRowAtIndexPath:ip];
+                }
+            }
         });
     } failure:^(NSError *error) {
         NSLog(@"Error with twitter");
@@ -150,21 +183,54 @@
 - (void)configureCell:(UITableViewCell *)cell
     forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.font = [UIFont fontWithName:@"8BITWONDERNominal" size:18];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.text = self.trends[indexPath.row];
+    
+    if ([cell.textLabel.text isEqualToString:self.keyword]) {
+        cell.textLabel.textColor = [UIColor greenColor];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *trend = self.trends[indexPath.row];
+    UITableViewCell *cell = [self.trendingTopicsTableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.textColor = [UIColor greenColor];
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
     GiphyNetworkingModel *giphyAPI = [GiphyNetworkingModel sharedInstance];
     [giphyAPI fetchGiphyImagePreviewForSearchTerm:trend success:^(NSURL *url) {
-        [self.imageView sd_setImageWithURL:url];
+        if (url) {
+            self.noGIFsFoundLabel.hidden = YES;
+            [self.imageView sd_setImageWithURL:url];
+            [def setInteger:0 forKey:@"com.memory.customization"];
+            [def setObject:trend forKey:@"com.memory.keyword"];
+            self.keyword = trend;
+            [def synchronize];
+            
+        } else {
+            self.noGIFsFoundLabel.hidden = NO;
+            [self.imageView sd_setImageWithURL:nil];
+            [def setInteger:2 forKey:@"com.memory.customization"];
+            [def removeObjectForKey:@"com.memory.keyword"];
+            [def synchronize];
+        }
+        
     } failure:^(NSError *error) {
         NSLog(@"Error with giphy");
     }];
+    
+    
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.trendingTopicsTableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.textColor = [UIColor whiteColor];
 }
 /*
 #pragma mark - Navigation

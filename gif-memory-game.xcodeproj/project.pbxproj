@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613867721C6A486A006762C3 /* GiphyAttribution.gif in Resources */ = {isa = PBXBuildFile; fileRef = 613867711C6A486A006762C3 /* GiphyAttribution.gif */; };
 		6140ECAD1C666EAC00719355 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAC1C666EAC00719355 /* TransitionAnimator.m */; };
 		6140ECB01C66C26400719355 /* StatusBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAF1C66C26400719355 /* StatusBoxView.m */; };
 		619F2F381C691FD7005E5D05 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 619F2F371C691FD7005E5D05 /* AboutViewController.m */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		613867711C6A486A006762C3 /* GiphyAttribution.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GiphyAttribution.gif; sourceTree = "<group>"; };
 		6140ECAB1C666EAC00719355 /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
 		6140ECAC1C666EAC00719355 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		6140ECAE1C66C26400719355 /* StatusBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusBoxView.h; path = Views/StatusBoxView.h; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				6140ECA41C6668ED00719355 /* Views */,
 				61A805F61C611E790096473C /* Info.plist */,
 				61A806061C62652B0096473C /* GiphyResponse.json */,
+				613867711C6A486A006762C3 /* GiphyAttribution.gif */,
 				61A805E51C611E790096473C /* Supporting Files */,
 				61A805FD1C612F730096473C /* Assets */,
 			);
@@ -275,6 +278,7 @@
 			files = (
 				61A805FF1C612FE30096473C /* 8-BIT WONDER.TTF in Resources */,
 				61A805F21C611E790096473C /* Assets.xcassets in Resources */,
+				613867721C6A486A006762C3 /* GiphyAttribution.gif in Resources */,
 				61A806071C62652B0096473C /* GiphyResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

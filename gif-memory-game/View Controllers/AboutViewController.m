@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import <Masonry/Masonry.h>
+#import <SDWebImage/UIImage+GIF.h>
 
 @interface AboutViewController ()
 @property (nonatomic, strong) UIImageView *backgroundImageView;
@@ -64,6 +65,19 @@
         make.top.equalTo(self.titleLabel.mas_bottom).offset(30);
         make.left.equalTo(self.view).offset(15);
         make.right.equalTo(self.view).offset(-15);
+    }];
+    
+    // Giphy Attribution
+    UIImageView *attr = [[UIImageView alloc] init];
+    attr.image = [UIImage sd_animatedGIFNamed:@"GiphyAttribution"];
+    attr.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:attr];
+    
+    [attr mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(-80);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@200);
+        make.height.equalTo(@42);
     }];
     
     [self setupExitArrow];
