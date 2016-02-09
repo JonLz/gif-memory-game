@@ -13,4 +13,5 @@
 + (instancetype)sharedInstance;
 - (void)fetchTrendingGiphyImageData:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *error))failure;
 - (void)fetchGiphyImageDataForSearchTerm:(NSString *)searchTerm success:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *error))failure;
+- (void)fetchGiphyImagePreviewForSearchTerm:(NSString *)searchTerm success:(void (^)(NSURL *url))success failure:(void (^)(NSError *error))failure;
 @end

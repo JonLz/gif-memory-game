@@ -59,11 +59,32 @@
     NSMutableDictionary *md = [[NSMutableDictionary alloc] init];
     md[@"q"] = searchTerm;
     md[@"api_key"] = @"dc6zaTOxFJmzC";
-    md[@"limit"] = @2;
+    md[@"limit"] = @12;
     
     [manager GET:url parameters:md progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         success(responseObject[@"data"]);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+        
+    }];
+}
+
+- (void)fetchGiphyImagePreviewForSearchTerm:(NSString *)searchTerm success:(void (^)(NSURL *))success failure:(void (^)(NSError *))failure
+{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    NSString *url = @"http://api.giphy.com/v1/gifs/search";
+    NSMutableDictionary *md = [[NSMutableDictionary alloc] init];
+    md[@"q"] = searchTerm;
+    md[@"api_key"] = @"dc6zaTOxFJmzC";
+    md[@"limit"] = @1;
+    
+    [manager GET:url parameters:md progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dict = [responseObject[@"data"] firstObject];
+        NSString *url = dict[@"images"][@"downsized"][@"url"];
+        success([NSURL URLWithString:url]);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(error);

@@ -11,7 +11,8 @@
 
 typedef NS_ENUM(NSUInteger, TransitionDirection) {
     Down,
-    Right
+    Right,
+    Left
 };
 
 @interface TransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>

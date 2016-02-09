@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface TwitterNetworkingModel : NSObject
-- (void)fetchTrends:(void (^)(NSArray *trends))success failure:(void (^)(NSError *))failure;
+- (void)fetchTrends:(void (^)(NSArray *trends))success failure:(void (^)(NSError *error))failure;
 + (instancetype)sharedInstance;
 @end

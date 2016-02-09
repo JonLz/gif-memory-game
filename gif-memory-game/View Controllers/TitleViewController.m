@@ -10,6 +10,7 @@
 #import <Masonry/Masonry.h>
 #import "GameViewController.h"
 #import "AboutViewController.h"
+#import "SettingsViewController.h"
 #import "TransitionAnimator.h"
 
 @interface TitleViewController () <UIViewControllerTransitioningDelegate>
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) UIStackView *menuStackView;
 @property (nonatomic, strong) UILabel *startLabel;
+@property (nonatomic, strong) UILabel *settingsLabel;
 @property (nonatomic, strong) UILabel *aboutLabel;
 
 @property (nonatomic, assign) TransitionDirection transitionDirection;
@@ -43,6 +45,7 @@
     self.logoImageView = [[UIImageView alloc] init];
     self.menuStackView = [[UIStackView alloc] init];
     self.startLabel = [self menuLabel];
+    self.settingsLabel = [self menuLabel];
     self.aboutLabel = [self menuLabel];
 }
 
@@ -103,8 +106,11 @@
     self.menuStackView.distribution = UIStackViewDistributionFillEqually;
     self.menuStackView.axis = UILayoutConstraintAxisVertical;
     self.menuStackView.spacing = 8.0f;
+    
     [self.menuStackView addArrangedSubview:self.startLabel];
+    [self.menuStackView addArrangedSubview:self.settingsLabel];
     [self.menuStackView addArrangedSubview:self.aboutLabel];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -116,6 +122,7 @@
         self.startLabel.text = @"Resume";
     }
     
+    self.settingsLabel.text = @"Customize";
     self.aboutLabel.text = @"About";
 
 }
@@ -123,6 +130,9 @@
 {
     UITapGestureRecognizer *startTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startTapped)];
     [self.startLabel addGestureRecognizer:startTap];
+    
+    UITapGestureRecognizer *settingsTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingsTapped)];
+    [self.settingsLabel addGestureRecognizer:settingsTap];
     
     UITapGestureRecognizer *aboutTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aboutTapped)];
     [self.aboutLabel addGestureRecognizer:aboutTap];
@@ -134,6 +144,14 @@
     gvc.transitioningDelegate = self;
     self.transitionDirection = Down;
     [self presentViewController:gvc animated:YES completion:nil];
+}
+
+- (void)settingsTapped
+{
+    SettingsViewController *svc = [[SettingsViewController alloc] init];
+    svc.transitioningDelegate = self;
+    self.transitionDirection = Left;
+    [self presentViewController:svc animated:YES completion:nil];
 }
 
 - (void)aboutTapped

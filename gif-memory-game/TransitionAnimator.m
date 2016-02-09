@@ -25,7 +25,11 @@
 }
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 1.25f;
+    if (self.direction == Down) {
+        return 1.25f;
+    } else {
+        return 0.75f;
+    }
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -50,18 +54,21 @@
             toViewController.view.frame = offscreenBottom;
         } else if (self.direction == Right) {
             toViewController.view.frame = offscreenRight;
+        } else if (self.direction == Left) {
+            toViewController.view.frame = offscreenLeft;
         }
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         
             if (self.direction == Down) {
                 fromViewController.view.frame = offscreenTop;
-                toViewController.view.frame = onScreen;
             } else if (self.direction == Right) {
                 fromViewController.view.frame = offscreenLeft;
-                toViewController.view.frame = onScreen;
+            } else if (self.direction == Left) {
+                fromViewController.view.frame = offscreenRight;
             }
-            
+           
+            toViewController.view.frame = onScreen;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
         }];
@@ -76,11 +83,13 @@
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             if (self.direction == Down) {
                 fromViewController.view.frame = offscreenBottom;
-                toViewController.view.frame = onScreen;
             } else if (self.direction == Right) {
                 fromViewController.view.frame = offscreenRight;
-                toViewController.view.frame = onScreen;
+            } else if (self.direction == Left) {
+                fromViewController.view.frame = offscreenLeft;
             }
+            
+            toViewController.view.frame = onScreen;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
         }];
