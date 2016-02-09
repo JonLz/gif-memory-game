@@ -35,6 +35,14 @@ There's a short write-up for each commit as well as some more information about 
 
 [Guide](http://www.jlazar.com)
 
+### Running and Building
++ git clone
++ create a Secrets.m file and add in your own Twitter API key
+```objective-c
+NSString *const TWITTER_CONSUMER_KEY = @"abc";
+NSString *const TWITTER_CONSUMER_SECRET = @"xyz";
+```
+
 ### Notes
 I made this project mostly to help people new to iOS development but it was also a great exercise to practice. I love the concept of working around a constraint and for this one I gave myself 1 week to work in my off hours (evenings) to build something that would provide value to both myself and others.
 
@@ -44,6 +52,7 @@ I welcome any and all contributions, comments, pull requests, feedback, criticis
 
 ### Future Additions
 + Swift edition coming soon
++ Unit testing
 
 ### License
 This project is released under the MIT license (MIT).
