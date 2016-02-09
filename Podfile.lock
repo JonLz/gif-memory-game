@@ -31,17 +31,20 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - STTwitter (0.2.3)
 
 DEPENDENCIES:
   - AFNetworking
   - Masonry
   - OHHTTPStubs
   - SDWebImage
+  - STTwitter
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   OHHTTPStubs: d2bf6a0f407620d67e75a1d3f12d86a2b1dd15c0
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  STTwitter: 77386cb6f1807fbfc0e321b9233bdecc9786195d
 
 COCOAPODS: 0.39.0

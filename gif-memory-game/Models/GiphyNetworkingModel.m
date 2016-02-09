@@ -21,7 +21,7 @@
     return self;
 }
 
-+(instancetype)sharedInstance
++ (instancetype)sharedInstance
 {
     static dispatch_once_t once;
     static id sharedInstance;
@@ -31,7 +31,12 @@
     return sharedInstance;
 }
 
--(void)fetchGiphyImageData:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *))failure
+- (void)fetchForUserInput
+{
+    //http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC&limit=12
+}
+
+- (void)fetchTrendingGiphyImageData:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *))failure
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -46,7 +51,27 @@
     }];
 }
 
--(void)stubsOn
+- (void)fetchGiphyImageDataForSearchTerm:(NSString *)searchTerm success:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *))failure
+{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
+    NSString *url = @"http://api.giphy.com/v1/gifs/search";
+    NSMutableDictionary *md = [[NSMutableDictionary alloc] init];
+    md[@"q"] = searchTerm;
+    md[@"api_key"] = @"dc6zaTOxFJmzC";
+    md[@"limit"] = @2;
+    
+    [manager GET:url parameters:md progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        success(responseObject[@"data"]);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+        
+    }];
+}
+
+- (void)stubsOn
 {
     // Stubbed response for endpoint:
     // http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=24

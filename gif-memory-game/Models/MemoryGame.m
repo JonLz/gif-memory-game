@@ -103,7 +103,7 @@
 - (void)generateTilesWithCompletion:(void (^)(BOOL success))completion
 {
     GiphyNetworkingModel *sharedGiphyAPI = [GiphyNetworkingModel sharedInstance];
-    [sharedGiphyAPI fetchGiphyImageData:^(NSArray *imageData) {
+    [sharedGiphyAPI fetchTrendingGiphyImageData:^(NSArray *imageData) {
         
         for (NSDictionary *result in imageData) {
             MemoryTile *tile = [[MemoryTile alloc] initWithDictionary:result];

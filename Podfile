@@ -9,6 +9,7 @@ pod 'AFNetworking'
 pod 'Masonry'
 pod 'SDWebImage'
 pod 'OHHTTPStubs'
+pod 'STTwitter'
 
 end
 

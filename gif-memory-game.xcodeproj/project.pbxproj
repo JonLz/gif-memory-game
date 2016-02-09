@@ -10,6 +10,8 @@
 		6140ECAD1C666EAC00719355 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAC1C666EAC00719355 /* TransitionAnimator.m */; };
 		6140ECB01C66C26400719355 /* StatusBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140ECAF1C66C26400719355 /* StatusBoxView.m */; };
 		619F2F381C691FD7005E5D05 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 619F2F371C691FD7005E5D05 /* AboutViewController.m */; };
+		619F2F3B1C695680005E5D05 /* TwitterNetworkingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 619F2F3A1C695680005E5D05 /* TwitterNetworkingModel.m */; };
+		619F2F3E1C695707005E5D05 /* Secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = 619F2F3D1C695707005E5D05 /* Secrets.m */; };
 		61A805E71C611E790096473C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E61C611E790096473C /* main.m */; };
 		61A805EA1C611E790096473C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805E91C611E790096473C /* AppDelegate.m */; };
 		61A805ED1C611E790096473C /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A805EC1C611E790096473C /* TitleViewController.m */; };
@@ -33,6 +35,10 @@
 		6140ECAF1C66C26400719355 /* StatusBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBoxView.m; path = Views/StatusBoxView.m; sourceTree = "<group>"; };
 		619F2F361C691FD7005E5D05 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		619F2F371C691FD7005E5D05 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		619F2F391C695680005E5D05 /* TwitterNetworkingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterNetworkingModel.h; sourceTree = "<group>"; };
+		619F2F3A1C695680005E5D05 /* TwitterNetworkingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterNetworkingModel.m; sourceTree = "<group>"; };
+		619F2F3C1C695707005E5D05 /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secrets.h; sourceTree = "<group>"; };
+		619F2F3D1C695707005E5D05 /* Secrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secrets.m; sourceTree = "<group>"; };
 		61A805E21C611E790096473C /* gif-memory-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gif-memory-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A805E61C611E790096473C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61A805E81C611E790096473C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 			children = (
 				61A806001C625D5A0096473C /* GiphyNetworkingModel.h */,
 				61A806011C625D5A0096473C /* GiphyNetworkingModel.m */,
+				619F2F391C695680005E5D05 /* TwitterNetworkingModel.h */,
+				619F2F3A1C695680005E5D05 /* TwitterNetworkingModel.m */,
 				61F8DB7F1C62BC3C0096BAD1 /* MemoryTile.h */,
 				61F8DB801C62BC3C0096BAD1 /* MemoryTile.m */,
 				61F8DB821C62BC430096BAD1 /* MemoryGame.h */,
@@ -152,6 +160,8 @@
 		61A805E41C611E790096473C /* gif-memory-game */ = {
 			isa = PBXGroup;
 			children = (
+				619F2F3C1C695707005E5D05 /* Secrets.h */,
+				619F2F3D1C695707005E5D05 /* Secrets.m */,
 				61A805E81C611E790096473C /* AppDelegate.h */,
 				61A805E91C611E790096473C /* AppDelegate.m */,
 				6140ECAB1C666EAC00719355 /* TransitionAnimator.h */,
@@ -319,6 +329,7 @@
 				6140ECB01C66C26400719355 /* StatusBoxView.m in Sources */,
 				61A805ED1C611E790096473C /* TitleViewController.m in Sources */,
 				61A805EA1C611E790096473C /* AppDelegate.m in Sources */,
+				619F2F3B1C695680005E5D05 /* TwitterNetworkingModel.m in Sources */,
 				61F8DB841C62BC430096BAD1 /* MemoryGame.m in Sources */,
 				61F8DB811C62BC3C0096BAD1 /* MemoryTile.m in Sources */,
 				61F8DB8D1C63EC650096BAD1 /* NSMutableArray+Shuffle.m in Sources */,
@@ -327,6 +338,7 @@
 				6140ECAD1C666EAC00719355 /* TransitionAnimator.m in Sources */,
 				619F2F381C691FD7005E5D05 /* AboutViewController.m in Sources */,
 				61F8DB871C630FB20096BAD1 /* MemoryTileView.m in Sources */,
+				619F2F3E1C695707005E5D05 /* Secrets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

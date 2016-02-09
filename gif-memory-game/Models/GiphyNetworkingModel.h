@@ -11,6 +11,6 @@
 
 @interface GiphyNetworkingModel : NSObject
 + (instancetype)sharedInstance;
-- (void)fetchGiphyImageData:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *error))failure;
-
+- (void)fetchTrendingGiphyImageData:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *error))failure;
+- (void)fetchGiphyImageDataForSearchTerm:(NSString *)searchTerm success:(void (^)(NSArray *imageData))success failure:(void (^)(NSError *error))failure;
 @end
