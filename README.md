@@ -37,6 +37,7 @@ There's a short write-up for each commit as well as some more information about 
 
 ### Running and Building
 + git clone
++ pod install
 + create a Secrets.m file and add in your own Twitter API key
 ```objective-c
 NSString *const TWITTER_CONSUMER_KEY = @"abc";
