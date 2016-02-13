@@ -33,7 +33,7 @@ A proof of concept for a memory game that everyone's played before. We'll utiliz
 ### Companion Guide
 There's a short write-up for each commit as well as some more information about the development process over here:
 
-[Guide](http://www.jlazar.com)
+[Guide](http://jonlz.github.io)
 
 ### Running and Building
 + git clone
