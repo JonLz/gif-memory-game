@@ -33,7 +33,7 @@ A proof of concept for a memory game that everyone's played before. We'll utiliz
 ### Companion Guide
 There's a short write-up for each commit as well as some more information about the development process over here:
 
-[Guide](http://jonlz.github.io)
+[Guide](http://jonlz.github.io/projects/gif-memory-game)
 
 ### Running and Building
 + git clone
